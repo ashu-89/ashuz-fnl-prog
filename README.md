@@ -1,1 +1,0 @@
-# ashuz-fnl-prog

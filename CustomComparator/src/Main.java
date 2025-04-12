@@ -11,6 +11,10 @@ public class Main {
 
 //        employess.stream().sorted(Comparator.comparing(Employee::getName)).forEach(employee -> System.out.println(employee.getName()));
         employess.stream().sorted(new CustomComparator()).forEach(employee -> System.out.println(employee.getName()));
+
+        System.out.println("same thing without custom comparator, lol, just chaining of existing comparators");
+        employess.stream().sorted(Comparator.comparing(Employee::getSalary).reversed().thenComparing(Employee::getName))
+                .forEach(employee -> System.out.println(employee.getName()));
     }
 
     private static void initializeEmployees(List<Employee> employees) {
